@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyMart</title>
+    <style type="text/css">
+        td {
+            padding: 5px 15px;
+        }
+
+        thead {
+            font-weight: bold;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Your Monthly Report</h1>
+
+    {% if purchases %}
+
+    <div>
+        <h4>Orders</h4>
+        <table>
+            <thead>
+                <td>Order Date</td>
+                <td>Order Time</td>
+                <td>Order total</td>
+            </thead>
+
+            <tbody>
+                {% for item in purchases %}
+                <tr>
+                    <td>{{ item.date }}</td>
+                    <td>{{ item.time }}</td>
+                    <td>Rs {{ item.order_total }}</td>
+                </tr>
+                {% endfor %}
+        </table>
+        <br>
+        <br>
+        <p>We hope you liked the shopping experience, please come back to <a href="http://127.0.0.1:8080">MyMart
+                webstore</a></p>
+        <p>We have attractive pricing and lightning delivery</p>
+    </div>
+
+    {% else %}
+    <p>You have not shopped with MyMart in the last month</p>
+    <p>We have attractive pricing and lightning delivery, please find us at <a href="http://127.0.0.1:8080">MyMart
+            webstore</a></p>
+    {% endif %}
+</body>
+
+</html>

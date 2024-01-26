@@ -1,0 +1,10 @@
+Flask
+Flask-SQLAlchemy
+Flask-JWT-Extended
+flask-bcrypt
+flask_restful
+redis
+celery[redis]
+Jinja2
+Flask-Excel
+Flask-Caching
